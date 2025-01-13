@@ -1,0 +1,37 @@
+
+.codegpt
+# Ignore .codegpt files
+.codegpt
+
+# Ignore Helm chart dependencies
+charts/*/charts/
+charts/*/tmpcharts/
+charts/*/Chart.lock
+
+# Ignore Helm release history
+charts/*/.helm/
+
+# Ignore temporary files
+*.swp
+*.bak
+*.tmp
+
+# Ignore logs
+*.log
+
+# Ignore OS generated files
+.DS_Store
+Thumbs.db
+
+# Ignore IDE specific files
+.vscode/
+.idea/
+*.iml
+
+# Ignore node_modules if using JavaScript/TypeScript
+node_modules/
+
+# Ignore Python virtual environments
+venv/
+__pycache__/
+*.pyc
