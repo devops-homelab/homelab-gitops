@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: db-credentials
+  namespace: mt-patient-record-service
+type: Opaque
+data:
+  username: ZG9hZG1pbgo=
+  password: QVZOU19qdFF5Wkw5QUhQMGtDZDFvX0F2Cg==
+  name: ZGVmYXVsdGRiCg==
+  host: bXQtcG9zdGdyZXNxbC1kYi1jbHVzdGVyLWRvLXVzZXItMTg1MjYxOTktMC5qLmRiLm9uZGlnaXRhbG9jZWFuLmNvbQo=
+  port: "MjUwNjAK"

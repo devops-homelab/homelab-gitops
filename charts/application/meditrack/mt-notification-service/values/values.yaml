@@ -1,0 +1,44 @@
+replicaCount: 2
+
+image:
+  repository: registry.digitalocean.com/mt-container-registry/mt-notification-service
+  tag: 255
+
+environment: production
+
+service:
+  type: ClusterIP
+  port: 8082
+  targetPort: 8082
+
+resources:
+  requests:
+    memory: "64Mi"
+    cpu: "250m"
+  limits:
+    memory: "128Mi"
+    cpu: "500m"
+
+ingress:
+  enabled: true
+  hosts:
+    - host: "notifications.apps.meditrack-app.me"
+      paths:
+        - "/"
+
+envFromSecrets:
+  DB_USER:
+    secretName: db-credentials
+    key: username
+  DB_PASSWORD:
+    secretName: db-credentials
+    key: password
+  DB_NAME:
+    secretName: db-credentials
+    key: name
+  DB_HOST:
+    secretName: db-credentials
+    key: host
+  DB_PORT:
+    secretName: db-credentials
+    key: port

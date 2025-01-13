@@ -1,0 +1,10 @@
+apiVersion: v2
+name: mt-notification-service
+description: A Helm chart for deploying an ArgoCD mt-notification-service
+type: application
+version: 0.1.0
+appVersion: "2.7.0" # Update with the app version you're targeting
+maintainers:
+  - name: Piumi
+    email: piumi.20232733@iit.ac.lk
+    url: https://github.com/meditrack-org

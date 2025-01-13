@@ -1,0 +1,44 @@
+replicaCount: 2
+
+image:
+  repository: registry.digitalocean.com/mt-container-registry/mt-doctor-record-service
+  tag: dbb
+
+environment: production
+
+service:
+  type: ClusterIP
+  port: 8084
+  targetPort: 8084
+
+resources:
+  requests:
+    memory: "64Mi"
+    cpu: "250m"
+  limits:
+    memory: "128Mi"
+    cpu: "500m"
+
+ingress:
+  enabled: true
+  hosts:
+    - host: "doctor-records.apps.meditrack-app.me"
+      paths:
+        - "/"
+
+envFromSecrets:
+  DB_USER:
+    secretName: db-credentials
+    key: username
+  DB_PASSWORD:
+    secretName: db-credentials
+    key: password
+  DB_NAME:
+    secretName: db-credentials
+    key: name
+  DB_HOST:
+    secretName: db-credentials
+    key: host
+  DB_PORT:
+    secretName: db-credentials
+    key: port
