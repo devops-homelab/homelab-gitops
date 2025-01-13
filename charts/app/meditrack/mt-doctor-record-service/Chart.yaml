@@ -5,6 +5,6 @@ type: application
 version: 0.1.0
 appVersion: "2.7.0" # Update with the app version you're targeting
 maintainers:
-  - name: Piumi
-    email: piumi.20232733@iit.ac.lk
-    url: https://github.com/meditrack-org
+  - name: Navindu
+    email: navindushane@gmail.com
+    url: https://github.com/devops-homelab

@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/meditrack-org/mt-argocd-applications.git 
+    repoURL: https://github.com/devops-homelab/mt-argocd-applications.git 
     targetRevision: main # Branch or tag
     path: ./
   destination:

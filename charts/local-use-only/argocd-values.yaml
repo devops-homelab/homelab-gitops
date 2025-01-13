@@ -12,14 +12,14 @@ configs:
     timeout.reconciliation: 45s  
     exec.enabled: true
     admin.enabled: true
-    url: "http://argocd.meditrack-app.me"
+    url: "http://argocd.homelab-app.me"
     tls.insecure: "true"
 
   credentialTemplates:
     https-creds:
-      url: https://github.com/meditrack-org
+      url: https://github.com/devops-homelab
       password: xxx
-      username: piumi175
+      username: njay4928
 
 redis-ha:   
   enabled: false  
@@ -41,7 +41,7 @@ server:
     annotations:
       nginx.ingress.kubernetes.io/ssl-redirect: "false"
     hosts:
-      - argocd.meditrack-app.me
+      - argocd.homelab-app.me
   extraArgs:
     - "--insecure"
     
