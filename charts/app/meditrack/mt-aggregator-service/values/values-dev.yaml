@@ -5,7 +5,7 @@ image:
   tag: 976
 
 schedule: "0 0 * * *"
-environment: production
+environment: dev
 
 resources:
   requests:

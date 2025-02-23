@@ -4,7 +4,7 @@ image:
   repository: registry.digitalocean.com/mt-container-registry/mt-doctor-record-service
   tag: 52a
 
-environment: production
+environment: dev
 
 service:
   type: ClusterIP
@@ -22,7 +22,7 @@ resources:
 ingress:
   enabled: true
   hosts:
-    - host: "doctor-records.apps.meditrack-app.me"
+    - host: "dev.doctor-records.apps.meditrack-app.me"
       paths:
         - "/"
 
