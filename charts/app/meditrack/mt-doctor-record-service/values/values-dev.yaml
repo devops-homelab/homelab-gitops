@@ -2,7 +2,7 @@ replicaCount: 2
 
 image:
   repository: registry.digitalocean.com/mt-container-registry/mt-doctor-record-service
-  tag: b68
+  tag: 789
 
 environment: dev
 
