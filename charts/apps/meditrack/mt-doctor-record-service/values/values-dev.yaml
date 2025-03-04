@@ -21,10 +21,19 @@ resources:
 
 ingress:
   enabled: true
+  className: nginx
+  annotations:
+    # Add any additional ingress annotations here if needed
+    nginx.ingress.kubernetes.io/rewrite-target: /
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
   hosts:
     - host: "dev.doctor-records.apps.meditrack-app.me"
       paths:
         - "/"
+  tls:
+    - hosts:
+        - "dev.doctor-records.apps.meditrack-app.me"
+      secretName: "dev-doctor-records-tls-secret"
 
 envFromSecrets:
   DB_USER:
