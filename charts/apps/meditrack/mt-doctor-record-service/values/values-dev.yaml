@@ -2,7 +2,7 @@ replicaCount: 2
 
 image:
   repository: registry.digitalocean.com/home-lab-container-registry/mt-doctor-record-service
-  tag: 2a8d0e5
+  tag: 0b87cf8
 
 environment: dev
 
