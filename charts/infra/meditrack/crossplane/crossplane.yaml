@@ -1,8 +1,0 @@
-replicas: 2
-
-imagePullSecrets:
-- dockerhub-secret
-
-provider:
-  # -- A list of Provider packages to install.
-  packages: ["xpkg.upbound.io/crossplane-contrib/provider-aws:v0.39.0", "crossplane/provider-digitalocean:v0.1.0"]

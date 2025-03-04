@@ -1,9 +1,0 @@
-apiVersion: v2
-name: crossplane
-description: A Helm chart for deploying Crossplane
-type: application
-version: 1.18.2
-appVersion: 1.18.2
-maintainers:
-  - name: Crossplane Maintainers
-    email: info@crossplane.io
