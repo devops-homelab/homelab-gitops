@@ -44,7 +44,7 @@ spec:
           {{- end }}
     {{- end }}
 
-  TLS configuration for secure HTTPS traffic
+  # TLS configuration for secure HTTPS traffic
   tls:
     - hosts:
         {{- range .Values.ingress.hosts }}
