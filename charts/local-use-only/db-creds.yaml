@@ -5,8 +5,8 @@ metadata:
   namespace: mt-doctor-record-service-dev
 type: Opaque
 data:
-  username: ZG9hZG1pbgo=
-  password: QVZOU19DNzJYWFRSWkVaMzFDZjlvUzdwCg==
-  name: ZGVmYXVsdGRiCg==
-  host: aG9tZWxhYi1wb3N0Z3Jlc3FsLWRiLWNsdXN0ZXItZG8tdXNlci0xODgzODgzMC0wLmUuZGIub25kaWdpdGFsb2NlYW4uY29tCg==
+  username: aG9tZWxhYi11c2VyCg==
+  password: QVZOU19kZFRJWVhxUUZ4TVJlQ21Pc2xUCg==
+  name: aG9tZWxhYgo=
+  host: cHJpdmF0ZS1ob21lbGFiLXBvc3RncmVzcWwtZGItY2x1c3Rlci1kZXYtcGctZG8tdXNlci0xODgzODgzMC0wLmsuZGIub25kaWdpdGFsb2NlYW4uY29tCg==
   port: MjUwNjAK
