@@ -1,0 +1,17 @@
+apiVersion: actions.summerwind.dev/v1alpha1
+kind: RunnerDeployment
+metadata:
+  name: my-runner-deployment
+  namespace: actions-runner-system
+spec:
+  replicas: 2
+  template:
+    spec:
+      labels:
+        - homelab-runner
+      organization: devops-homelab
+      group: devops-homelab
+      image: summerwind/actions-runner-dind
+      imagePullPolicy: Always
+      dockerEnabled: true
+      dockerdWithinRunnerContainer: true
