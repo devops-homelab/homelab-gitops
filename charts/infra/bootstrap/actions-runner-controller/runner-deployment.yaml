@@ -1,7 +1,7 @@
 apiVersion: actions.summerwind.dev/v1alpha1
 kind: RunnerDeployment
 metadata:
-  name: my-runner-deployment
+  name: homelab-runner
   namespace: actions-runner-system
 spec:
   replicas: 2
