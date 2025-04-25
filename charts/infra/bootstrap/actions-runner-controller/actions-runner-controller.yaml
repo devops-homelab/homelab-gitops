@@ -155,8 +155,6 @@ podDisruptionBudget:
 priorityClassName: ""
 
 env:
-
-  # or a list of complete environment variable definitions e.g.:
   - name: GITHUB_TOKEN
     valueFrom:
       secretKeyRef:
