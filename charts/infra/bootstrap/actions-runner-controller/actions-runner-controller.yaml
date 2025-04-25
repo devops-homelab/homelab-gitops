@@ -1,3 +1,5 @@
+
+
 # Default values for actions-runner-controller.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
@@ -33,10 +35,9 @@ enableLeaderElection: true
 # See https://github.com/actions/actions-runner-controller/pull/937 for more details.
 authSecret:
   enabled: true
-  create: true
+  create: false
   name: "controller-manager"
   annotations: {}
-  github_token: "dummy"
   ### GitHub Apps Configuration
   ## NOTE: IDs MUST be strings, use quotes
   #github_app_id: ""
