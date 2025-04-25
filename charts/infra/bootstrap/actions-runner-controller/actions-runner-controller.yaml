@@ -33,7 +33,7 @@ enableLeaderElection: true
 # See https://github.com/actions/actions-runner-controller/pull/937 for more details.
 authSecret:
   enabled: true
-  create: false
+  create: true
   name: "controller-manager"
   annotations: {}
   ### GitHub Apps Configuration
