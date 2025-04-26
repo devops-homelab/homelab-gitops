@@ -1,6 +1,6 @@
 authSecret:
   # enabled: false
-  create: true
+  create: false
   # name: "controller-manager"
   # annotations: {}
 
