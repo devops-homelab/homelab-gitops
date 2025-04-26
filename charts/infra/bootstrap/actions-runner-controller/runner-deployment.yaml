@@ -3,6 +3,8 @@ kind: RunnerDeployment
 metadata:
   name: homelab-runner
   namespace: actions-runner-system
+  annotations:
+    argocd.argoproj.io/sync-wave: "2"
 spec:
   replicas: 2
   template:
