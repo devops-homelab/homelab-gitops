@@ -6,6 +6,6 @@ metadata:
 spec:
   scaleTargetRef:
     name: homelab-runner
-  minReplicas: 1
-  maxReplicas: 5
+  minReplicas: 5
+  maxReplicas: 10
   scaleDownDelaySecondsAfterScaleOut: 300
