@@ -10,7 +10,7 @@ spec:
       labels:
         - homelab-runner
       organization: devops-homelab
-      image: summerwind/actions-runner-dind
+      image: summerwind/actions-runner-dind:latest
       imagePullPolicy: Always
       dockerEnabled: true
       dockerdWithinRunnerContainer: true
