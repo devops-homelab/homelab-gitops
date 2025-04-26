@@ -10,4 +10,4 @@ env:
       secretKeyRef:
         key: github_token
         name: controller-manager
-        optional: true
+        optional: false
