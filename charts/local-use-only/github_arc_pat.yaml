@@ -5,4 +5,5 @@ metadata:
   namespace: actions-runner-system
 type: Opaque
 data:
-  github_token: Z2hwX1YweGlReWVlMFc2RTBza29XYUo0MFQ1OWd0ZHU1VTFjdENIRAo=
+  github_token: Z2hwX3dwamYxMHh4NFZOM3VPRzIxN1pPSmhlUGoxMU1tdTNiY0ZPUA==
+  
