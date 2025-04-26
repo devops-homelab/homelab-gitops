@@ -1,8 +1,5 @@
 authSecret:
-  # enabled: false
   create: false
-  # name: "controller-manager"
-  # annotations: {}
 
 env:
   - name: GITHUB_TOKEN
