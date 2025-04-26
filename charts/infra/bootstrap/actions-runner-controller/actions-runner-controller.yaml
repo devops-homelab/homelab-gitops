@@ -2,4 +2,12 @@ authSecret:
   create: true
   enable: true
   name: controller-manager
-  github_token: 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
+  github_token: dummy_token
+
+# env:
+#   - name: GITHUB_TOKEN
+#     valueFrom:
+#       secretKeyRef:
+#         key: github_token
+#         name: controller-manager
+#         optional: false
