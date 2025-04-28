@@ -1,17 +1,17 @@
-apiVersion: kyverno.io/v1
-kind: ClusterPolicy
-metadata:
-  name: restrict-service-type
-spec:
-  validationFailureAction: enforce
-  rules:
-    - name: only-clusterip
-      match:
-        resources:
-          kinds:
-            - Service
-      validate:
-        message: "Only ClusterIP Services are allowed."
-        pattern:
-          spec:
-            type: "ClusterIP"
+# apiVersion: kyverno.io/v1
+# kind: ClusterPolicy
+# metadata:
+#   name: restrict-service-type
+# spec:
+#   validationFailureAction: enforce
+#   rules:
+#     - name: only-clusterip
+#       match:
+#         resources:
+#           kinds:
+#             - Service
+#       validate:
+#         message: "Only ClusterIP Services are allowed."
+#         pattern:
+#           spec:
+#             type: "ClusterIP"
