@@ -3,12 +3,12 @@ kind: Ingress
 metadata:
   name: {{ .Release.Name }}
   namespace: {{ .Release.Namespace }}
-  # annotations:
-  #   # nginx.ingress.kubernetes.io/rewrite-target: /
-  #   # cert-manager.io/cluster-issuer: {{ .Values.ingress.clusterIssuer | default "letsencrypt-prod" }}
-  #   {{- if .Values.ingress.annotations }}
-  #   {{- toYaml .Values.ingress.annotations | nindent 4 }}
-  #   {{- end }}
+  annotations:
+    # nginx.ingress.kubernetes.io/rewrite-target: /
+    cert-manager.io/cluster-issuer: {{ .Values.ingress.clusterIssuer | default "letsencrypt-prod" }}
+    {{- if .Values.ingress.annotations }}
+    {{- toYaml .Values.ingress.annotations | nindent 4 }}
+    {{- end }}
 spec:
   ingressClassName: {{ .Values.ingress.className | default "kong" }}
   rules:
@@ -45,9 +45,9 @@ spec:
     {{- end }}
 
   # TLS configuration for secure HTTPS traffic
-  # tls:
-  #   - hosts:
-  #       {{- range .Values.ingress.hosts }}
-  #       - {{ .host }}
-  #       {{- end }}
-  #     secretName: {{ .Release.Name }}-tls-secret
+  tls:
+    - hosts:
+        {{- range .Values.ingress.hosts }}
+        - {{ .host }}
+        {{- end }}
+      secretName: {{ .Release.Name }}-tls-secret
