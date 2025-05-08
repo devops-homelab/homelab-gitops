@@ -20,9 +20,8 @@ resources:
     cpu: "500m"
 
 ingress:
-  enabled: true
   className: kong
-  annotations:
+  # annotations:
     # nginx.ingress.kubernetes.io/rewrite-target: /
     # cert-manager.io/cluster-issuer: "letsencrypt-prod"
   hosts:
