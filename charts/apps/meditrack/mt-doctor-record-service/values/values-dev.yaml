@@ -29,11 +29,11 @@ ingress:
     - host: "dev.doctor-records.apps.meditrack-app.me"
       paths:
         - "/"
-  tls:
-    - hosts:
-        - "dev.doctor-records.apps.meditrack-app.me"
-        - "preview.dev.doctor-records.apps.meditrack-app.me"
-      secretName: "dev-doctor-records-tls-secret"
+  # tls:
+  #   - hosts:
+  #       - "dev.doctor-records.apps.meditrack-app.me"
+  #       - "preview.dev.doctor-records.apps.meditrack-app.me"
+  #     secretName: "dev-doctor-records-tls-secret"
 
 envFromSecrets:
   DB_USER:
