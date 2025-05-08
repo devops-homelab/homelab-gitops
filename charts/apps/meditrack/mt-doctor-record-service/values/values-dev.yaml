@@ -21,7 +21,7 @@ resources:
 
 ingress:
   enabled: true
-  className: nginx
+  className: kong
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
     cert-manager.io/cluster-issuer: "letsencrypt-prod"
