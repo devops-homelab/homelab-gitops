@@ -1,6 +1,6 @@
 apiVersion: v2
-name: mt-appointment-scheduling-service
-description: A Helm chart for deploying an ArgoCD mt-appointment-scheduling-service application
+name: appointment-scheduling-service
+description: A Helm chart for deploying an ArgoCD appointment-scheduling-service application
 type: application
 version: 0.1.0
 appVersion: "2.7.0" # Update with the app version you're targeting

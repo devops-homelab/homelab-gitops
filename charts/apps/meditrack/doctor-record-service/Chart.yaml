@@ -1,6 +1,6 @@
 apiVersion: v2
-name: mt-aggregator-service-dev
-description: A Helm chart for deploying an ArgoCD mt-aggregator-service
+name: doctor-record-service
+description: A Helm chart for deploying an ArgoCD doctor-record-service application
 type: application
 version: 0.1.0
 appVersion: "2.7.0" # Update with the app version you're targeting

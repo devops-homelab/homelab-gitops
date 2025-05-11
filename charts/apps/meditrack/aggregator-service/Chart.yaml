@@ -1,6 +1,6 @@
 apiVersion: v2
-name: mt-notification-service
-description: A Helm chart for deploying an ArgoCD mt-notification-service
+name: aggregator-service-dev
+description: A Helm chart for deploying an ArgoCD aggregator-service
 type: application
 version: 0.1.0
 appVersion: "2.7.0" # Update with the app version you're targeting

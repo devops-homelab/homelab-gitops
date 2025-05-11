@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Secret
 metadata:
   name: db-credentials
-  namespace: mt-doctor-record-service-dev
+  namespace: doctor-record-service-dev
 type: Opaque
 data:
   username: ZG9hZG1pbgo=

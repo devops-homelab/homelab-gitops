@@ -1,6 +1,6 @@
 apiVersion: v2
-name: mt-patient-record-service
-description: A Helm chart for deploying an ArgoCD mt-patient-record-service
+name: patient-record-service
+description: A Helm chart for deploying an ArgoCD patient-record-service
 type: application
 version: 0.1.0
 appVersion: "2.7.0" # Update with the app version you're targeting
