@@ -22,7 +22,6 @@ resources:
 ingress:
   className: kong
   annotations:
-    # nginx.ingress.kubernetes.io/rewrite-target: /
     cert-manager.io/cluster-issuer: "letsencrypt-prod"
   hosts:
     - host: "dev.doctor-records.apps.meditrack-app.me"
@@ -33,6 +32,9 @@ ingress:
         - "dev.doctor-records.apps.meditrack-app.me"
         - "preview.dev.doctor-records.apps.meditrack-app.me"
       secretName: "dev-doctor-records-tls-secret"
+
+podAnnotations:
+  secret.reloader.stakater.com/reload: "db-credentials"
 
 envFromSecrets:
   DB_USER:
