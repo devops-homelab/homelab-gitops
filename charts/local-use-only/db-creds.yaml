@@ -3,6 +3,8 @@ kind: Secret
 metadata:
   name: db-credentials
   namespace: doctor-record-service-dev
+  annotations:
+     reloader.stakater.com/auto: "true"
 type: Opaque
 data:
   username: ZG9hZG1pbgo=
