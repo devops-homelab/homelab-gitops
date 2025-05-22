@@ -8,6 +8,9 @@ charts/*/charts/
 charts/*/tmpcharts/
 charts/*/Chart.lock
 
+# Ignore local-use-only files directory
+charts/*/local-use-only/
+
 # Ignore Helm release history
 charts/*/.helm/
 
