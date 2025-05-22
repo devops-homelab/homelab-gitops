@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: db-credentials
+  namespace: doctor-record-service-dev
+  annotations:
+     reloader.stakater.com/auto: "true"
+type: Opaque
+data:
+  username: ZG9hZG1pbgo=
+  password: QVZOU191cy01TERFMVdHUkFKSEhaYmwxCg==
+  name: aG9tZWxhYgo=
+  host: aG9tZWxhYi1wb3N0Z3Jlc3FsLWRiLWNsdXN0ZXItZGV2LXBnLWRvLXVzZXItMTg4Mzg4MzAtMC5kLmRiLm9uZGlnaXRhbG9jZWFuLmNvbQo=
+  port: MjUwNjAK
