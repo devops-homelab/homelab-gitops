@@ -1,2 +1,2 @@
 authSecret:
-  create: false
+  create: true
