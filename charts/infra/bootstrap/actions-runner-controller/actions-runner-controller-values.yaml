@@ -1,2 +1,4 @@
 authSecret:
-  create: false
+  create: true
+  enabled: true
+  github_token: xx
