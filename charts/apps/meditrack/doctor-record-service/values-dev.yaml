@@ -1,8 +1,8 @@
 replicaCount: 1
 
 image:
-  repository: registry.digitalocean.com/home-lab-container-registry/mt-doctor-record-service
-  tag: d894880
+  repository: registry.digitalocean.com/home-lab-container-registry/doctor-record-service
+  tag: 8548e22
 
 environment: dev
 
