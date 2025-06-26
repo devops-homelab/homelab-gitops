@@ -2,7 +2,7 @@ replicaCount: 2
 
 image:
   repository: registry.digitalocean.com/mt-container-registry/mt-doctor-record-service
-  tag: d894880
+  tag: 8548e22
 
 environment: staging
 
