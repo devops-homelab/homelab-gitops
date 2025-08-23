@@ -1,0 +1,127 @@
+# Gateway API configuration for doctor-record-service development environment
+replicaCount: 1
+
+app:
+  name: doctor-record-service
+  version: dev
+
+image:
+  repository: registry.digitalocean.com/home-lab-container-registry/mt-doctor-record-service
+  tag: c2bc011 # Use same tag as regular dev for consistency
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 8084
+  targetPort: 8084
+
+# Disable traditional ingress
+ingress:
+  enabled: false
+
+# Enable Gateway API
+gateway:
+  enabled: true
+  gatewayClassName: kong
+  annotations:
+    gateway.networking.k8s.io/description: Gateway for doctor-record-service dev environment
+  listeners:
+    - name: http
+      port: 80
+      protocol: HTTP
+      hostname: dev.doctor-records.apps.meditrack-app.me
+    - name: https
+      port: 443
+      protocol: HTTPS
+      hostname: dev.doctor-records.apps.meditrack-app.me
+      tls:
+        mode: Terminate
+        certificateRefs:
+          - name: dev-doctor-records-tls-secret
+
+httpRoute:
+  enabled: true
+  gatewayName: doctor-record-service-gateway
+  hostnames:
+    - dev.doctor-records.apps.meditrack-app.me
+  rules:
+    - matches:
+        - path:
+            type: PathPrefix
+            value: /api/doctors
+        - path:
+            type: PathPrefix
+            value: /health
+      backendRefs:
+        - name: doctor-record-service-gateway-active # Match the service naming pattern
+          port: 8084
+          weight: 100
+      filters:
+        - type: RequestHeaderModifier
+          requestHeaderModifier:
+            add:
+              - name: X-Service-Name
+                value: doctor-record-service
+              - name: X-Environment
+                value: dev
+            set:
+              - name: X-Forwarded-Proto
+                value: https
+
+resources:
+  limits:
+    cpu: 500m
+    memory: 512Mi
+  requests:
+    cpu: 250m
+    memory: 256Mi
+
+# Health checks
+healthCheck:
+  enabled: true
+  path: /health
+  initialDelaySeconds: 30
+  periodSeconds: 10
+
+# Environment variables
+env:
+  - name: ENVIRONMENT
+    value: dev
+  - name: LOG_LEVEL
+    value: info
+  - name: DB_HOST
+    valueFrom:
+      secretKeyRef:
+        name: db-credentials
+        key: host
+  - name: DB_NAME
+    valueFrom:
+      secretKeyRef:
+        name: db-credentials
+        key: name
+  - name: DB_PASSWORD
+    valueFrom:
+      secretKeyRef:
+        name: db-credentials
+        key: password
+  - name: DB_PORT
+    valueFrom:
+      secretKeyRef:
+        name: db-credentials
+        key: port
+  - name: DB_USER
+    valueFrom:
+      secretKeyRef:
+        name: db-credentials
+        key: username
+
+# Monitoring
+monitoring:
+  enabled: true
+  prometheus:
+    enabled: true
+    path: /metrics
+    port: 8084
+
+podAnnotations:
+  secret.reloader.stakater.com/reload: db-credentials
