@@ -77,11 +77,11 @@ resources:
     memory: 256Mi
 
 # Health checks
-healthCheck:
-  enabled: true
-  path: /health
-  initialDelaySeconds: 30
-  periodSeconds: 10
+# healthCheck:
+#   enabled: true
+#   path: /health
+#   initialDelaySeconds: 30
+#   periodSeconds: 10
 
 # Environment variables
 env:
