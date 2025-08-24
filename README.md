@@ -48,6 +48,23 @@ The `doctor-record-service` demonstrates modern Gateway API patterns:
 - Production: `https://dev.doctor-records.apps.meditrack-app.me`
 - Preview: `https://preview.dev.doctor-records.apps.meditrack-app.me`
 
+## GitOps Deployment Flow
+
+```mermaid
+sequenceDiagram
+  participant Dev as Developer
+  participant Git as Git Repository
+  participant Argo as ArgoCD
+  participant K8s as Kubernetes
+  participant Kong as Kong Gateway
+
+  Dev->>Git: Push code changes (charts/values)
+  Argo->>Git: Detect changes / watch
+  Argo->>K8s: Apply manifests
+  K8s->>Kong: Update routes/services
+  Kong->>Kong: Route traffic (blue-green & preview)
+```
+
 **Advanced Features**:
 - Blue-green deployments with Argo Rollouts
 - Automatic TLS certificates for both domains
