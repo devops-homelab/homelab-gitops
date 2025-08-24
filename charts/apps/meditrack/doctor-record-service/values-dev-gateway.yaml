@@ -6,7 +6,7 @@ app:
   version: dev
 
 image:
-  repository: registry.digitalocean.com/home-lab-container-registry/doctor-record-service
+  repository: registry.digitalocean.com/home-lab-container-registry/mt-doctor-record-service
   tag: c2bc011 # Use same tag as regular dev for consistency
   pullPolicy: IfNotPresent
 
@@ -83,37 +83,32 @@ resources:
 #   initialDelaySeconds: 30
 #   periodSeconds: 10
 
-# Environment variables
-env:
-  - name: ENVIRONMENT
-    value: dev
-  - name: LOG_LEVEL
-    value: info
-  - name: DB_HOST
-    valueFrom:
-      secretKeyRef:
-        name: db-credentials
-        key: host
-  - name: DB_NAME
-    valueFrom:
-      secretKeyRef:
-        name: db-credentials
-        key: name
-  - name: DB_PASSWORD
-    valueFrom:
-      secretKeyRef:
-        name: db-credentials
-        key: password
-  - name: DB_PORT
-    valueFrom:
-      secretKeyRef:
-        name: db-credentials
-        key: port
-  - name: DB_USER
-    valueFrom:
-      secretKeyRef:
-        name: db-credentials
-        key: username
+# Environment variables from secrets (matches chart template structure)
+envFromSecrets:
+  DB_USER:
+    secretName: db-credentials
+    key: username
+  DB_PASSWORD:
+    secretName: db-credentials
+    key: password
+  DB_NAME:
+    secretName: db-credentials
+    key: name
+  DB_HOST:
+    secretName: db-credentials
+    key: host
+  DB_PORT:
+    secretName: db-credentials
+    key: port
+
+# Blue-Green deployment strategy
+strategy:
+  type: blueGreen
+  blueGreen:
+    activeService: doctor-record-service-gateway-active
+    previewService: doctor-record-service-gateway-preview
+    autoPromotionEnabled: true
+    scaleDownDelaySeconds: 30
 
 # Monitoring
 monitoring:
