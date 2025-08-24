@@ -22,7 +22,7 @@ ingress:
 # Enable Gateway API
 gateway:
   enabled: true
-  gatewayClassName: kong
+  gatewayClassName: cilium  # Changed from kong to cilium
   annotations:
     gateway.networking.k8s.io/description: Gateway for doctor-record-service dev environment
   listeners:
