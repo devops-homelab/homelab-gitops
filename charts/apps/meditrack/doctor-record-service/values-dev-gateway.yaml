@@ -38,6 +38,18 @@ gateway:
         mode: Terminate
         certificateRefs:
           - name: dev-doctor-records-tls-secret
+    - name: preview-http
+      port: 80
+      protocol: HTTP
+      hostname: preview.dev.doctor-records.apps.meditrack-app.me
+    - name: preview-https
+      port: 443
+      protocol: HTTPS
+      hostname: preview.dev.doctor-records.apps.meditrack-app.me
+      tls:
+        mode: Terminate
+        certificateRefs:
+          - name: preview-dev-doctor-records-tls-secret
 
 httpRoute:
   enabled: true
@@ -53,6 +65,21 @@ httpRoute:
         - name: "" # Will default to service name
           port: 8084
           weight: 100
+  
+  # Preview route configuration
+  preview:
+    enabled: true
+    hostnames:
+      - preview.dev.doctor-records.apps.meditrack-app.me
+    rules:
+      - matches:
+          - path:
+              type: PathPrefix
+              value: /
+        backendRefs:
+          - name: "" # Will default to {release-name}-preview service
+            port: 8084
+            weight: 100
 
 # TLS Certificate configuration
 certificate:
@@ -63,6 +90,18 @@ certificate:
     kind: ClusterIssuer
   dnsNames:
     - dev.doctor-records.apps.meditrack-app.me
+  duration: 2160h # 90 days
+  renewBefore: 360h # 15 days before expiry
+
+# Preview TLS Certificate configuration  
+previewCertificate:
+  enabled: true
+  secretName: preview-dev-doctor-records-tls-secret
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
+  dnsNames:
+    - preview.dev.doctor-records.apps.meditrack-app.me
   duration: 2160h # 90 days
   renewBefore: 360h # 15 days before expiry
 
