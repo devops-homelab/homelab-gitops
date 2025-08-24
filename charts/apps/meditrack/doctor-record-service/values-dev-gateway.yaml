@@ -54,6 +54,18 @@ httpRoute:
           port: 8084
           weight: 100
 
+# TLS Certificate configuration
+certificate:
+  enabled: true
+  secretName: dev-doctor-records-tls-secret
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
+  dnsNames:
+    - dev.doctor-records.apps.meditrack-app.me
+  duration: 2160h # 90 days
+  renewBefore: 360h # 15 days before expiry
+
 resources:
   limits:
     cpu: 500m
