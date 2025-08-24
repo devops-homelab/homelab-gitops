@@ -2,7 +2,7 @@ replicaCount: 1
 
 image:
   repository: registry.digitalocean.com/home-lab-container-registry/doctor-record-service
-  tag: b769883
+  tag: 5ea53ce
 
 environment: dev
 
