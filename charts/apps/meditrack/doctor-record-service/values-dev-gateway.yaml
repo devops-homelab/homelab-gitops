@@ -51,6 +51,9 @@ httpRoute:
             value: /api/doctors
         - path:
             type: PathPrefix
+            value: /doctors        # Add this to match your actual endpoint
+        - path:
+            type: PathPrefix
             value: /health
       backendRefs:
         - name: "" # Will default to service name
@@ -67,6 +70,12 @@ httpRoute:
             set:
               - name: X-Forwarded-Proto
                 value: https
+        # Optional: Add path rewriting if needed
+        # - type: URLRewrite
+        #   urlRewrite:
+        #     path:
+        #       type: ReplacePrefixMatch
+        #       replacePrefixMatch: /api
 
 resources:
   limits:
