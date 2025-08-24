@@ -6,7 +6,7 @@ app:
   version: dev
 
 image:
-  repository: registry.digitalocean.com/home-lab-container-registry/mt-doctor-record-service
+  repository: registry.digitalocean.com/home-lab-container-registry/doctor-record-service
   tag: c2bc011 # Use same tag as regular dev for consistency
   pullPolicy: IfNotPresent
 
@@ -53,7 +53,7 @@ httpRoute:
             type: PathPrefix
             value: /health
       backendRefs:
-        - name: doctor-record-service-gateway-active # Match the service naming pattern
+        - name: "" # Will default to service name
           port: 8084
           weight: 100
       filters:
