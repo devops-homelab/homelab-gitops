@@ -41,41 +41,18 @@ gateway:
 
 httpRoute:
   enabled: true
-  gatewayName: doctor-record-service-gateway
+  gatewayName: ""  # Will default to {release-name}-gateway
   hostnames:
     - dev.doctor-records.apps.meditrack-app.me
   rules:
     - matches:
         - path:
             type: PathPrefix
-            value: /api/doctors
-        - path:
-            type: PathPrefix
-            value: /doctors        # Add this to match your actual endpoint
-        - path:
-            type: PathPrefix
-            value: /health
+            value: /
       backendRefs:
         - name: "" # Will default to service name
           port: 8084
           weight: 100
-      filters:
-        - type: RequestHeaderModifier
-          requestHeaderModifier:
-            add:
-              - name: X-Service-Name
-                value: doctor-record-service
-              - name: X-Environment
-                value: dev
-            set:
-              - name: X-Forwarded-Proto
-                value: https
-        # Optional: Add path rewriting if needed
-        # - type: URLRewrite
-        #   urlRewrite:
-        #     path:
-        #       type: ReplacePrefixMatch
-        #       replacePrefixMatch: /api
 
 resources:
   limits:
