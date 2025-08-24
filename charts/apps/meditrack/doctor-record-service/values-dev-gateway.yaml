@@ -105,7 +105,7 @@ strategy:
   blueGreen:
     activeService: doctor-record-service-gateway-active
     previewService: doctor-record-service-gateway-preview
-    autoPromotionEnabled: true
+    autoPromotionEnabled: false
     scaleDownDelaySeconds: 30
 
 # Monitoring
