@@ -12,6 +12,7 @@ spec:
       labels:
         - homelab-runner
       organization: devops-homelab
+      group: devops-team
       image: summerwind/actions-runner-dind:latest
       imagePullPolicy: Always
       dockerEnabled: true
