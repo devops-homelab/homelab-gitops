@@ -1,3 +1,4 @@
+local-use-only/
 .codegpt
 # Ignore .codegpt files
 .codegpt

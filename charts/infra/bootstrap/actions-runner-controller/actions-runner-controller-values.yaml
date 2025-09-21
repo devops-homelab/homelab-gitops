@@ -1,2 +1,4 @@
 authSecret:
+  enabled: true
   create: false
+  name: controller-manager
