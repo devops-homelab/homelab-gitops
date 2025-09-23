@@ -7,7 +7,7 @@ app:
 
 image:
   repository: registry.digitalocean.com/home-lab-container-registry/doctor-record-service
-  tag: 80d4ad0
+  tag: 6b5f7bc
   pullPolicy: IfNotPresent
 
 service:
